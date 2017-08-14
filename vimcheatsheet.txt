@@ -1,0 +1,19 @@
+VIM Cheat Sheet
+
+:<N> Vex .
+  --open a file browser that is <N> chars wide
+
+P
+  --when on a file in explorer, open the file in the previous VIM window (this is how you open files in the above browser)
+
+Ctrl + w w
+  -- Ctrl + w opens the window chooser
+  -- pressing w once tabs to the next available window
+  -- press w multiple times until you reach the window you're looking for
+
+: ! <somecommand> %
+  --run <somecommand> on the current file
+
+%
+  --jump to matching brace
+
