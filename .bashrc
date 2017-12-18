@@ -8,43 +8,12 @@ IFS='.' read -r box env smb group city blargh <<< `hostname`
 #SYMBOL='ᐉ'
 #SYMBOL='ϟ'
 #SYMBOL='♱'
-SYMBOL='ᛃ'
+SYMBOL='厶'
+#SYMBOL='ᛃ'
 #SYMBOL='-'
-SYMBOL_COLOR='91'
-REJLARTEXT='37'
-DIRTEXT='90'
- 
-if [ "x$group" == "xqa" ]; then
-  SYMBOL_COLOR='36'
-fi
-if [ "x$env" == "xb" ]; then
-  SYMBOL='♱'
-fi
-if [ "x$box" == "xPhilippes-iMac-2 local" ]; then
-  SYMBOL='ꗈ'
-fi
-if [ "x$box" == "xdocker0001" ]; then
-  SYMBOL='ꔹ'
-fi
-if [ "x$box" == "xfs1" ]; then
-  SYMBOL='⁘'
-  if [ "x$env" == "xb" ]; then
-    SYMBOL='ꙮ'
-  fi
-fi
-if [ "x$box" == "xdocker" ]; then
-  SYMBOL='ꏍ'
-fi
-if [ "x$box" == "xjumpbox" ]; then
-  SYMBOL='-|- '
-fi
-if [ "x$box" == "xdockerhost-01" ]; then
-  SYMBOL='-|- '
-  SYMBOL_COLOR='36'
-fi
-if [ "x$city" == "xaustin" ]; then
-  SYMBOL=$SYMBOL' ✓'
-fi
+SYMBOL_COLOR='0;91'
+REJLARTEXT='0;96'
+DIRTEXT='0;94'
  
 if [ "$EUID" -eq 0 ]; then
   # is root
@@ -58,15 +27,14 @@ if [ "$EUID" -eq 0 ]; then
   fi
 fi
  
-export PS1="\[\e[${DIRTEXT}m\]\W \[\e[${SYMBOL_COLOR}m\]${SYMBOL} \[\e[\034\e[${REJLARTEXT}m\]"
-export PYTHONPATH=$HOME/smb-setup/3.2/migration/:$PYTHONPATH
-export PYTHONPATH=$HOME/smb-setup/3.2/migration/util/:$PYTHONPATH
+export PS1="\[\e[${DIRTEXT}m\]\W \[\e[${SYMBOL_COLOR}m\]${SYMBOL} \[\e[${REJLARTEXT}m\]"
  
 export PATH=$PATH:/home/afischer/bin
 export HISTFILESIZE=1073741824
 shopt -s histappend
 export LSCOLORS=Exfxcxdxbxegedabagacad
  
+alias ls='ls --color=auto'
 alias ll='ls -la'
 alias c='pushd > /dev/null'
 alias c_='popd'
