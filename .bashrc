@@ -27,9 +27,9 @@ if [ "$EUID" -eq 0 ]; then
   fi
 fi
  
-export PS1="\[\e[${DIRTEXT}m\]\W \[\e[${SYMBOL_COLOR}m\]${SYMBOL} \[\e[${REJLARTEXT}m\]"
+export PS1="\[\e[${DIRTEXT}m\]\W \[\e[${SYMBOL_COLOR}m\]${SYMBOL}\[\e[${REJLARTEXT}m\]"
  
-export PATH=$PATH:/home/afischer/bin
+export PATH=$PATH:~/bin:~/.local/bin
 export HISTFILESIZE=1073741824
 shopt -s histappend
 export LSCOLORS=Exfxcxdxbxegedabagacad
