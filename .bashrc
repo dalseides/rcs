@@ -1,8 +1,7 @@
 #.bashrc
 
-IFS='.' read -r box env smb group city blargh <<< `hostname`
+IFS='.' read -r hname blargh <<< `hostname`
 # Δ ϟ ǂ ᐉ ₪ ✕ ✖ ᛃ ⁘ ♖ ✓ 仒 亽 合 厶龱 ꏍꔹ ꗈ ꙮ ꛎ 옷 우 ܍
-
  
 #SYMBOL='Δ'
 #SYMBOL='ᐉ'
@@ -14,6 +13,12 @@ SYMBOL='厶'
 SYMBOL_COLOR='0;91'
 REJLARTEXT='0;96'
 DIRTEXT='0;94'
+
+if [ "$hname" == "linode01" ]; then
+  SYMBOL='⁘  '
+  SYMBOL_COLOR='33'
+  DIRTEXT='34'
+fi
  
 if [ "$EUID" -eq 0 ]; then
   # is root

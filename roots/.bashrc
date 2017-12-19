@@ -1,5 +1,5 @@
 #!/bin/bash
 
-USER=`who | awk '{print $1}'`
+USER=`who | awk 'END {print $1}'`
 
 source /home/$USER/.bashrc
