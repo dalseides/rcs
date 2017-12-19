@@ -15,7 +15,7 @@ REJLARTEXT='0;96'
 DIRTEXT='0;94'
 
 if [ "$hname" == "linode01" ]; then
-  SYMBOL='⁘  '
+  SYMBOL='♖ '
   SYMBOL_COLOR='33'
   DIRTEXT='34'
 fi
