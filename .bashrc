@@ -45,3 +45,5 @@ alias c='pushd > /dev/null'
 alias c_='popd'
 alias rfr='source ~/.bash_profile'
 alias s='sudo'
+alias dps='docker ps --format "table {{.Names}}\t{{.ID}}\t{{.Status}}\t{{.Networks}}\t{{.Ports}}\t{{.Mounts}}"'
+
