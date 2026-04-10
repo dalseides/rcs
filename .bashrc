@@ -10,29 +10,26 @@ IFS='.' read -r hname blargh <<< `hostname`
 SYMBOL='厶'
 #SYMBOL='ᛃ'
 #SYMBOL='-'
-SYMBOL_COLOR='0;91'
-REJLARTEXT='0;34'
-DIRTEXT='0;32'
+RED='0;91'
+GREEN='0;32'
+BLUE='0;34'
+WHITE='0;97'
+GOLD='33'
+SYMBOL_COLOR=$RED
+REJLARTEXT=$GREEN
+DIRTEXT=$BLUE
 
 if [ "$hname" == "linode01" ]; then
-  SYMBOL='♖ '
-  SYMBOL_COLOR='33'
-  DIRTEXT='34'
+  SYMBOL_COLOR=$GOLD
+  SYMBOL='ꙮ '
+  DIRTEXT=$GREEN
 fi
  
 if [ "$EUID" -eq 0 ]; then
   # is root
-  CURRENT=$SYMBOL_COLOR
-  SYMBOL_COLOR=$REJLARTEXT
-  REJLARTEXT=$CURRENT
-  DIRTEXT='0;97'
-  
-#  if [ "$CURRENT" -gt 50 ]; then
-#    REJLARTEXT=$(( CURRENT - 60 ))
-#    REJLARTEXT="0;$REJLARTEXT"
-#  else
-#    REJLARTEXT=$CURRENT
-#  fi
+  SYMBOL_COLOR=$BLUE
+  REJLARTEXT=$RED
+  DIRTEXT=$WHITE
 fi
  
 export PS1="\[\e[${DIRTEXT}m\]\W \[\e[${SYMBOL_COLOR}m\]${SYMBOL}\[\e[${REJLARTEXT}m\]"
