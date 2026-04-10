@@ -5,8 +5,6 @@ set number
 set cindent
 set hlsearch
 set incsearch
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:␣
-set list
 
 filetype plugin on
 set ofu=syntaxcomplete#Complete

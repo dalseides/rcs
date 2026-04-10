@@ -11,8 +11,8 @@ SYMBOL='厶'
 #SYMBOL='ᛃ'
 #SYMBOL='-'
 SYMBOL_COLOR='0;91'
-REJLARTEXT='0;96'
-DIRTEXT='0;94'
+REJLARTEXT='0;34'
+DIRTEXT='0;32'
 
 if [ "$hname" == "linode01" ]; then
   SYMBOL='♖ '
@@ -24,12 +24,15 @@ if [ "$EUID" -eq 0 ]; then
   # is root
   CURRENT=$SYMBOL_COLOR
   SYMBOL_COLOR=$REJLARTEXT
-  if [ "$CURRENT" -gt 50 ]; then
-    REJLARTEXT=$(( CURRENT - 60 ))
-    REJLARTEXT="0;$REJLARTEXT"
-  else
-    REJLARTEXT=$CURRENT
-  fi
+  REJLARTEXT=$CURRENT
+  DIRTEXT='0;97'
+  
+#  if [ "$CURRENT" -gt 50 ]; then
+#    REJLARTEXT=$(( CURRENT - 60 ))
+#    REJLARTEXT="0;$REJLARTEXT"
+#  else
+#    REJLARTEXT=$CURRENT
+#  fi
 fi
  
 export PS1="\[\e[${DIRTEXT}m\]\W \[\e[${SYMBOL_COLOR}m\]${SYMBOL}\[\e[${REJLARTEXT}m\]"
