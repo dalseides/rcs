@@ -23,6 +23,7 @@ if [ "$hname" == "linode01" ]; then
   SYMBOL_COLOR=$GOLD
   SYMBOL='ꙮ '
   DIRTEXT=$GREEN
+  REJLARTEXT=$BLUE
 fi
  
 if [ "$EUID" -eq 0 ]; then
