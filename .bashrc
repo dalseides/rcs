@@ -21,9 +21,8 @@ DIRTEXT=$BLUE
 
 if [ "$hname" == "linode01" ]; then
   SYMBOL_COLOR=$GOLD
-  SYMBOL='ꙮ '
+  SYMBOL='✖ '
   DIRTEXT=$GREEN
-  REJLARTEXT=$BLUE
 fi
  
 if [ "$EUID" -eq 0 ]; then
@@ -35,16 +34,20 @@ fi
  
 export PS1="\[\e[${DIRTEXT}m\]\W \[\e[${SYMBOL_COLOR}m\]${SYMBOL}\[\e[${REJLARTEXT}m\]"
  
-export PATH=$PATH:~/bin:~/.local/bin
+export PATH=$PATH:~/bin:~/.local/bin:/home/dalseides/.local/share/gem/ruby/3.3.0/bin
 export HISTFILESIZE=1073741824
 shopt -s histappend
 export LSCOLORS=Exfxcxdxbxegedabagacad
+export COMPOSE_FILE=/code/dockerstuffs/compose.yaml
  
 alias ls='ls --color=auto'
 alias ll='ls -la'
 alias c='pushd > /dev/null'
 alias c_='popd'
+alias dc='sl'
 alias rfr='source ~/.bash_profile'
 alias s='sudo'
 alias dps='docker ps --format "table {{.Names}}\t{{.ID}}\t{{.Status}}\t{{.Networks}}\t{{.Ports}}\t{{.Mounts}}"'
+alias docker='sudo docker'
 
+eval "$(~/.local/bin/mise activate bash)"
